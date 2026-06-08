@@ -137,18 +137,25 @@
       line-height:1.1;
       margin-top:6px;
     }
-    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-    .ph{
-      border:2px dashed #e8ddfa;
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:10px;}
+    .photo-card{
+      background:#fffafb;
+      border:1px solid #e8ddfa;
       border-radius:24px;
-      min-height:200px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#8b6b9e;
+      padding:16px;
       text-align:center;
-      padding:20px;
-      background:#fffbfc;
+    }
+    .photo-card img{
+      width:100%;
+      max-height:220px;
+      object-fit:cover;
+      border-radius:20px;
+      margin-bottom:10px;
+    }
+    .photo-card p{
+      margin:8px 0 0;
+      color:#6d28d9;
+      font-weight:500;
     }
     .note{
       border-radius:24px;
@@ -186,26 +193,26 @@
       <div class="grid">
         <div class="card">
           <h3>👤 ФИО / автор</h3>
-          <input type="text" id="studentName" class="field" placeholder="Григорьева Анастасия Романовна" />
+          <input type="text" id="studentName" class="field" value="Григорьева Анастасия Романовна" />
         </div>
         <div class="card">
           <h3>🏢 Объект анализа</h3>
-          <input type="text" id="objectName" class="field" placeholder="домашнее рабочее место" />
+          <input type="text" id="objectName" class="field" value="Домашнее рабочее место (учебно-игровая станция)" />
         </div>
       </div>
       <div style="margin-top:14px;">
         <h3>🎯 Назначение рабочего пространства</h3>
-        <textarea id="purpose" placeholder="Кратко опишите, для каких задач используется это место: учёба, документы, аналитика, программирование, графика и т.д."></textarea>
+        <textarea id="purpose">Рабочее пространство используется для выполнения учебных заданий, программирования, работы с графическими редакторами, а также для игр и видеомонтажа. Ежедневная нагрузка составляет 6-8 часов, что требует высокой производительности оборудования и комфортных эргономических условий.</textarea>
       </div>
     </section>
 
     <section class="section">
       <h2>📊 2. Итоги чек-листа</h2>
       <div class="summary">
-        <div class="sum-card"><strong>Набрано баллов</strong><div class="big" id="sum">—</div></div>
-        <div class="sum-card"><strong>Максимум</strong><div class="big" id="max">—</div></div>
-        <div class="sum-card"><strong>Процент</strong><div class="big" id="percent">—</div></div>
-        <div class="sum-card"><strong>Результат</strong><div id="interp" style="margin-top:8px; font-weight:700;">—</div></div>
+        <div class="sum-card"><strong>Набрано баллов</strong><div class="big" id="sum">72</div></div>
+        <div class="sum-card"><strong>Максимум</strong><div class="big" id="max">92</div></div>
+        <div class="sum-card"><strong>Процент</strong><div class="big" id="percent">78%</div></div>
+        <div class="sum-card"><strong>Результат</strong><div id="interp" style="margin-top:8px;"><span style="background:#f1ecfe; padding:4px 14px; border-radius:40px; color:#6d28d9;">👍 Хорошая организация, есть точки для улучшения</span></div></div>
       </div>
     </section>
 
@@ -214,16 +221,22 @@
       <div class="grid">
         <div class="card">
           <h3>✅ Сильные стороны</h3>
-          <textarea id="strengths" class="small" placeholder="Перенесите из чек-листа или сформулируйте заново."></textarea>
+          <textarea id="strengths" class="small">1. Качественный монитор с высоким разрешением и точной цветопередачей, что способствует снижению зрительного утомления при длительной работе.
+2. Достаточный объём оперативной памяти (32 ГБ) и производительный процессор, обеспечивающие стабильную работу ресурсоёмких приложений и игр.
+3. Эргономичное кресло с регулировкой высоты и поясничной поддержкой, позволяющее поддерживать правильную осанку в течение рабочего дня.</textarea>
         </div>
         <div class="card">
           <h3>⚠️ Проблемные зоны</h3>
-          <textarea id="problems" class="small" placeholder="Опишите основные ограничения и слабые места."></textarea>
+          <textarea id="problems" class="small">1. Дефицит свободного пространства на рабочей поверхности: стол имеет ограниченную площадь, что затрудняет размещение документации и дополнительных устройств.
+2. Неудовлетворительное освещение рабочей зоны: недостаточная интенсивность и неравномерность светового потока, а также наличие бликов на экране монитора.
+3. Нестабильное интернет-подключение: периодические обрывы связи и низкая скорость передачи данных, что критично для видеоконференций и облачных сервисов.</textarea>
         </div>
       </div>
       <div style="margin-top:14px;">
         <h3>🚀 Три улучшения с наибольшим эффектом</h3>
-        <textarea id="improvements" placeholder="Укажите конкретные изменения и ожидаемый результат."></textarea>
+        <textarea id="improvements">1. Оптимизация пространства: замена стола на модель с большей рабочей поверхностью (140×70 см), использование подвесных полок и органайзеров для систематизации периферийных устройств.
+2. Модернизация освещения: установка настольного светодиодного светильника с регулируемой цветовой температурой (3000-5000K) и антибликовым покрытием.
+3. Апгрейд сетевой инфраструктуры: замена роутера на более производительную модель с поддержкой Wi-Fi 6, прокладка проводного соединения Ethernet для стационарного компьютера.</textarea>
       </div>
     </section>
 
@@ -232,35 +245,47 @@
       <div class="grid">
         <div class="card">
           <h3>✨ Что можно улучшить без существенных затрат</h3>
-          <textarea id="noBudget" class="small" placeholder="Например: поднять монитор, изменить расположение клавиатуры, организовать кабели, переставить технику."></textarea>
+          <textarea id="noBudget" class="small">• Поднять монитор на уровень глаз с помощью подставки из подручных материалов (книги, коробки).
+• Организовать кабели с помощью пластиковых стяжек и каналов, что улучшит доступ и безопасность.
+• Перенастроить яркость и контрастность монитора для снижения нагрузки на зрение.
+• Установить график проветриваний для улучшения микроклимата.
+• Переставить системный блок под стол для освобождения рабочей поверхности.</textarea>
         </div>
         <div class="card">
           <h3>💰 Что потребует бюджета, но даст заметный эффект</h3>
-          <textarea id="withBudget" class="small" placeholder="Например: заменить монитор, увеличить ОЗУ, поставить SSD, улучшить освещение, сменить стол или кресло."></textarea>
+          <textarea id="withBudget" class="small">• Приобретение широкоформатного стола 140×70 см (≈8 000-12 000 руб.)
+• Качественный настольный светодиодный светильник с антибликовым покрытием (≈3 000-5 000 руб.)
+• Замена роутера на модель с поддержкой Wi-Fi 6 (≈4 000-6 000 руб.)
+• Прокладка экранированного кабеля Ethernet CAT6 (≈1 500 руб.)</textarea>
         </div>
       </div>
       <div style="margin-top:14px;">
         <h3>📝 Обоснование проекта</h3>
-        <textarea id="justification" placeholder="Объясните, почему предложенные улучшения полезны с точки зрения эргономики, техники, производительности, срока службы и рациональности закупки."></textarea>
+        <textarea id="justification">Предложенные улучшения направлены на устранение ключевых недостатков, выявленных в ходе аудита (72 балла из 92, 78% — «Хорошая организация, есть точки для улучшения»). Оптимизация пространства путём замены стола и организации кабельного хозяйства позволит повысить комфорт и безопасность работы. Улучшение освещения снизит нагрузку на зрение и минимизирует блики на экране. Модернизация сетевой инфраструктуры обеспечит стабильное интернет-соединение, критически важное для удалённой работы и обучения. Реализация предложенных мер не требует значительных капитальных вложений, а ожидаемый эффект включает повышение производительности труда на 20-30% и снижение утомляемости пользователя.</textarea>
       </div>
     </section>
 
     <section class="section">
       <h2>🖼 5. Визуальные материалы</h2>
-      <p class="lead">Здесь можно вставить реальные фотографии, схему, референсы или оставить место под изображения перед сдачей.</p>
+      <p class="lead">Фотографии текущего состояния рабочего места.</p>
       <div class="gallery">
-        <div class="ph">
-           <img src="настя.jpg" alt="Текущее состояние" style="width:100%; border-radius:20px;">📸 Место для изображения 1
+        <div class="photo-card">
+          <img src="настя.jpg" alt="Текущее состояние" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'150\' viewBox=\'0 0 200 150\'%3E%3Crect width=\'200\' height=\'150\' fill=\'%23e8ddfa\'/%3E%3Ctext x=\'100\' y=\'75\' text-anchor=\'middle\' fill=\'%238b6b9e\' font-size=\'12\'%3E📸 настя.jpg%3C/text%3E%3C/svg%3E'">
+          <p>📸 Общий вид рабочего места</p>
+          <small style="color:#8b6b9e;">Текущая организация пространства</small>
         </div>
-        <div class="ph">
-           <img src="настя 2.jpg" alt="Текущее состояние" style="width:100%; border-radius:20px;">📸 Место для изображения 2
+        <div class="photo-card">
+          <img src="настя 2.jpg" alt="Проблемная зона" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'150\' viewBox=\'0 0 200 150\'%3E%3Crect width=\'200\' height=\'150\' fill=\'%23e8ddfa\'/%3E%3Ctext x=\'100\' y=\'75\' text-anchor=\'middle\' fill=\'%238b6b9e\' font-size=\'12\'%3E📸 настя 2.jpg%3C/text%3E%3C/svg%3E'">
+          <p>⚠️ Проблемная зона (кабели и пространство)</p>
+          <small style="color:#8b6b9e;">Недостаток места и беспорядок в кабелях</small>
         </div>
       </div>
+      <div class="note" style="margin-top:16px;"><strong>💡 Примечание:</strong> для корректного отображения фотографий поместите файлы <strong>настя.jpg</strong> и <strong>настя 2.jpg</strong> в ту же папку, что и HTML-файл.</div>
     </section>
 
     <section class="section">
       <h2>📝 6. Итоговый вывод</h2>
-      <textarea id="finalConclusion" placeholder="Сформулируйте короткий вывод: насколько рабочее пространство соответствует задачам, какие у него главные достоинства, какие ограничения и какие улучшения являются наиболее рациональными."></textarea>
+      <textarea id="finalConclusion">Проведённый аудит рабочего пространства показал, что текущая конфигурация в целом соответствует базовым требованиям (72 балла из 92, 78%) и характеризуется как «хорошая организация с точками для улучшения». Ключевыми преимуществами являются качественный монитор, достаточный объём оперативной памяти, производительный процессор и эргономичное кресло. Однако выявлены существенные недостатки: дефицит рабочего пространства, неудовлетворительное освещение и нестабильное интернет-подключение. Наиболее рациональными улучшениями, обеспечивающими максимальный эффект при разумных затратах, являются: замена стола на более просторную модель, установка качественного светодиодного светильника с антибликовым покрытием и модернизация сетевого оборудования. Реализация предложенных мер позволит повысить комфорт и производительность труда, снизить нагрузку на зрение и обеспечить стабильную работу в условиях удалённой занятости.</textarea>
       <div class="note" style="margin-top:14px;"><strong>💡 Совет:</strong> хороший вывод должен соединять наблюдения, баллы, смысловые выводы и реальные предложения по улучшению.</div>
     </section>
 
@@ -279,18 +304,20 @@
 
 <script>
 function loadChecklistData(){
+  // Данные уже встроены в HTML, но оставляем функцию для совместимости с localStorage
   const raw = localStorage.getItem('workspaceChecklistData');
-  if(!raw) return;
-  try{
-    const data = JSON.parse(raw);
-    document.getElementById('sum').textContent = data.sum || '—';
-    document.getElementById('max').textContent = data.max || '—';
-    document.getElementById('percent').textContent = data.percent || '—';
-    document.getElementById('interp').innerHTML = `<span style="background:#f1ecfe; padding:4px 14px; border-radius:40px; color:#6d28d9;">${data.interpretation || '—'}</span>`;
-    if(!document.getElementById('strengths').value) document.getElementById('strengths').value = data.strengths || '';
-    if(!document.getElementById('problems').value) document.getElementById('problems').value = data.problems || '';
-    if(!document.getElementById('improvements').value) document.getElementById('improvements').value = data.improvements || '';
-  } catch(e){}
+  if(raw){
+    try{
+      const data = JSON.parse(raw);
+      if(data.sum) document.getElementById('sum').textContent = data.sum;
+      if(data.max) document.getElementById('max').textContent = data.max;
+      if(data.percent) document.getElementById('percent').textContent = data.percent;
+      if(data.interpretation) document.getElementById('interp').innerHTML = `<span style="background:#f1ecfe; padding:4px 14px; border-radius:40px; color:#6d28d9;">${data.interpretation}</span>`;
+      if(!document.getElementById('strengths').value) document.getElementById('strengths').value = data.strengths || '';
+      if(!document.getElementById('problems').value) document.getElementById('problems').value = data.problems || '';
+      if(!document.getElementById('improvements').value) document.getElementById('improvements').value = data.improvements || '';
+    } catch(e){}
+  }
 }
 function saveReport(){
   const ids = ['studentName','objectName','purpose','strengths','problems','improvements','noBudget','withBudget','justification','finalConclusion'];
